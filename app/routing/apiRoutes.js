@@ -1,6 +1,6 @@
 //=============================== DEPENDENCIES ==========================================
 
-// Get data that exported from my friends.js file
+// Get data that I exported from my friends.js file and store in a variable
 var friendData = require("../data/friends");
 
 
