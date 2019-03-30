@@ -5,7 +5,6 @@ var express = require("express");
 var path = require("path");
 
 
-
 //============================ EXPRESS CONFIGURATION ====================================
 
 // set up Express server 
@@ -19,13 +18,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("./app/public"));
 
-//=================================== ROUTES ============================================
+//=================================== ROUTES =============================================
 
 // Establish routes to my html and api js files from my Express server 
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
-//=================================== INITIATION ============================================
+//=================================== INITIATION =========================================
 
 // Initiate my server on the specified port
 app.listen(PORT, function() {
