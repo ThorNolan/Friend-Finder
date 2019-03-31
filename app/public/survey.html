@@ -26,7 +26,7 @@
 
 
 
-    
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -34,3 +34,39 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<script type="text/javascript">
+    
+    // jQuery to gather submission data from user responses to survey questions 
+    $(".submit").on("click", function(event) {
+      event.preventDefault();
+  
+      // Grab all survey elements 
+      var newFriend = {
+        friendName: $("#friendName").val(),
+        friendPic: $("#friendPic").val(),
+        question1: $("#reserve-email").val(),
+        customerID: $("#reserve-unique-id").val()
+      };
+  
+      console.log(newFriend);
+  
+      // This line is the magic. It"s very similar to the standard ajax function we used.
+      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+      // depending on if a tables is available or not.
+      //  
+      $.post("/api/friends", newFriend,
+        function(data) {
+  
+          // Clear the form when submitting
+          $("#reserve-name").val("");
+          $("#reserve-phone").val("");
+          $("#reserve-email").val("");
+          $("#reserve-unique-id").val("");
+  
+        });
+  
+    });
+  
+</script>
