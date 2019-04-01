@@ -45,14 +45,14 @@
         <h4>Name</h4>
         <input type="text" id="name" class="form-control" required>
     
-        <h4>Link to a picture (maybe it's you, <i>maybe it's not</i>)</h4>
+        <h4>Link to a photo (maybe it's you, <i>maybe it's not</i>)</h4>
         <input type="text" id="photo" class="form-control" required>
     
         <hr>
     
         <!-- question 1 -->
         <div class="form-group">
-            <label for="q1"></label>
+            <label for="q1">There is no god.</label>
             <select class="form-control" id="q1">
                 <option value="empty"></option>
                 <option value="1">1 (strongly disagree)</option>
@@ -65,7 +65,7 @@
     
         <!-- question 2 -->
         <div class="form-group">
-            <label for="q2"></label>
+            <label for="q2">The inevitability of universal entropy renders all life ultimately meaningless.</label>
             <select class="form-control" id="q2">
                 <option value="empty"></option>
                 <option value="1">1</option>
@@ -78,7 +78,7 @@
     
         <!-- question 3 -->
         <div class="form-group">
-            <label for="q3"></label>
+            <label for="q3">Only representations of our experiences can be shared between individuals, so it is impossible for us to determine whether our experience really compares with anyone elses.</label>
             <select class="form-control" id="q3">
                 <option value="empty"></option>
                 <option value="1">1</option>
@@ -91,7 +91,7 @@
     
         <!-- question 4 -->
         <div class="form-group">
-            <label for="q4"></label>
+            <label for="q4">Consciousness is the greatest curse any living thing can bear.</label>
             <select class="form-control" id="q4">
                 <option value="empty"></option>
                 <option value="1">1</option>
@@ -201,14 +201,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title">Wow! You two have so much in common.</h2>
+                    <h2 class="modal-title">Wow! You two have so much in common. It's as though you've both reached through the impenetrable vastness of the internet and touched each others souls.</h2>
                 </div>
                 <div class="modal-body">
                     <h2 id="userMatch"></h2>
                     <img id="userMatchPhoto" src="#">
                 </div>
                 <div class="modal-footer">
-                    <button type="btn btn-primary" data-dismiss="modal">Close</button>
+                    <button type="btn btn-primary" data-dismiss="modal">Goodbye, dear friend.</button>
                 </div>
             </div>
         </div>
@@ -224,6 +224,7 @@
   </body>
 </html>
 
+<!-- client side script for validating and gathering form inputs  -->
 <script type="text/javascript">
     
     // jQuery click listener to gather submission data from user responses to survey questions 
@@ -259,7 +260,7 @@
     
         console.log(newFriend);
 
-        // Post request for the newFriend object that
+        // Post request for the newFriend object that also returns data from about their best match calculates on the apiRoutes.js
         $.post("/api/friends", newFriend,
             function(data) {
                 // Trigger my modal popup with info about the match found for the user
@@ -269,7 +270,7 @@
             });
       } else {
           // Alert user if they failed to respond to all form elements
-          alert("⚠️ Please complete all fields before submitting! ⚠️")
+          alert("⚠️ Please complete all fields before submitting! ⚠️");
       }
     });
   

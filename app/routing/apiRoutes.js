@@ -21,7 +21,9 @@ module.exports = function(app) {
 
         function findMatch(userData) {
             var totalDifference = 0;
-            for (var i=0; )
+            for (var i=0; i < userData.length; i++) {
+                
+            }
         }
 
     });    

@@ -18,8 +18,7 @@ var friendsArray = [
           ]
         }
 
-]
-
+];
 
 
 // Export my friends data array for use within my other files
