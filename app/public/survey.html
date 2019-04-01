@@ -12,6 +12,8 @@
     <title>Friend Finder</title>
   </head>
   <body>
+
+    <!-- container for main survey page content -->
     <div class="container">
 
         <h2>Fill out this survey—your perfect match is waiting...</h2>
@@ -19,10 +21,10 @@
     
         <h3><strong>A little about yourself</strong></h3>
         <h4>Name</h4>
-        <input type="text" id="name" class="form-control" required="">
+        <input type="text" id="name" class="form-control" required>
     
         <h4>Link to a picture (maybe it's you, <i>maybe it's not</i>)</h4>
-        <input type="text" id="photo" class="form-control" required="">
+        <input type="text" id="photo" class="form-control" required>
     
         <hr>
     
@@ -33,7 +35,7 @@
                 <option value="empty"></option>
                 <option value="1">1 (strongly disagree)</option>
                 <option value="2">2</option>
-                <option value="3">3</option>
+                <option value="3">3 (neutral)</option>
                 <option value="4">4</option>
                 <option value="5">5 (strongly agree)</option>
             </select>
@@ -159,7 +161,18 @@
         <br>
     
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-id-badge" aria-hidden="true"></i>  EXPERIENCE THE RUSH</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-child" aria-hidden="true"></i>  EXPERIENCE THE RUSH</button>
+
+        <br>
+
+    </div>
+
+    <!-- footer with links to the friends list in JSON format and the github repo -->
+    <footer class="footer">
+        <div class="container center">
+        <p><a href="/api/friends"><button type="button" class="btn btn-outline-dark">API Friends List</button></a> <a href="https://github.com/ThorNolan/Friend-Finder"><button type="button" class="btn btn-outline-dark">GitHub Repo</button></a></p>
+        </div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -171,31 +184,52 @@
 
 <script type="text/javascript">
     
-    // jQuery to gather submission data from user responses to survey questions 
+    // jQuery click listener to gather submission data from user responses to survey questions 
     $(".submit").on("click", function(event) {
       event.preventDefault();
   
-      // Grab all survey elements 
-      var newFriend = {
-        friendName: $("#friendName").val(),
-        friendPic: $("#friendPic").val(),
-        question1: $("#reserve-email").val(),
-        customerID: $("#reserve-unique-id").val()
-      };
-  
-      console.log(newFriend);
-  
-      $.post("/api/friends", newFriend,
-        function(data) {
-  
-          // Clear the form when submitting
-          $("#reserve-name").val("");
-          $("#reserve-phone").val("");
-          $("#reserve-email").val("");
-          $("#reserve-unique-id").val("");
-  
-        });
-  
+      // Function for form validation checks for any empty input areas, which will set my formCompleted variable to false
+      var formCompleted = true;
+
+      if ($("#name").val() === "" || $("#photo").val() === "" || $("#q1").val() === "" || $("#q2").val() === "" || $("#q3").val() === "" || $("#q4").val() === "" || $("#q5").val() === "" || $("#q6").val() === "" || $("#q7").val() === "" || $("#q8").val() === "" || $("#q9").val() === "" || $("#q10").val() === "") {
+          formCompleted = false;
+      }
+
+      if (formCompleted) {
+
+        // Grab all survey responses and store them in an object
+        var newFriend = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            answers : [
+                $("#q1").val(),
+                $("#q2").val(),
+                $("#q3").val(),
+                $("#q4").val(),
+                $("#q5").val(),
+                $("#q6").val(),
+                $("#q7").val(),
+                $("#q8").val(),
+                $("#q9").val(),
+                $("#q10").val()
+            ]
+        };
+    
+        console.log(newFriend);
+    
+        $.post("/api/friends", newFriend,
+            function(data) {
+    
+            // Clear the form when submitting
+            $("#reserve-name").val("");
+            $("#reserve-phone").val("");
+            $("#reserve-email").val("");
+            $("#reserve-unique-id").val("");
+    
+            });
+      } else {
+          alert("⚠️ Please complete all fields before submitting! ⚠️")
+      }
     });
   
 </script>

@@ -17,7 +17,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Provide server access to my public directory for serving my css and images
-app.use(express.static(path.join(__dirname, './app/public')));
+app.use(express.static(path.join(__dirname, "./app/public")));
+app.use(express.static(path.join(__dirname, "./app/public/assets")));
+
 
 //=================================== ROUTES =============================================
 
