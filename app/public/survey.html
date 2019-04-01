@@ -174,6 +174,26 @@
         </div>
     </footer>
 
+    <!-- Modal popup that triggers when user presses submit button and presents them with their best match-->
+    <div id="matchModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Wow! You two have so much in common.</h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="userMatch"></h2>
+                    <img id="userMatchPhoto" src="#">
+                </div>
+                <div class="modal-footer">
+                    <button type="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -216,18 +236,17 @@
         };
     
         console.log(newFriend);
-    
+
+        // Post request for the newFriend object that
         $.post("/api/friends", newFriend,
             function(data) {
-    
-            // Clear the form when submitting
-            $("#reserve-name").val("");
-            $("#reserve-phone").val("");
-            $("#reserve-email").val("");
-            $("#reserve-unique-id").val("");
-    
+                // Trigger my modal popup with info about the match found for the user
+                $("#userMatch").text(data.name);
+				$("#userMatchPhoto").attr("src", data.photo);
+				$("#matchModal").modal("toggle");
             });
       } else {
+          // Alert user if they failed to respond to all form elements
           alert("⚠️ Please complete all fields before submitting! ⚠️")
       }
     });
