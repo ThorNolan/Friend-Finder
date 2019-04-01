@@ -17,9 +17,9 @@ module.exports = function(app) {
 
         console.log(req.body.scores);
 
-        var newFriend = req.body;
+        var userData = req.body;
 
-        function findMatch(newFriend) {
+        function findMatch(userData) {
             var totalDifference = 0;
             for (var i=0; )
         }
