@@ -12,20 +12,154 @@
     <title>Friend Finder</title>
   </head>
   <body>
+    <div class="container">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <h2>Fill out this survey—your perfect match is waiting...</h2>
+        <hr>
+    
+        <h3><strong>A little about yourself</strong></h3>
+        <h4>Name</h4>
+        <input type="text" id="name" class="form-control" required="">
+    
+        <h4>Link to a picture (maybe it's you, <i>maybe it's not</i>)</h4>
+        <input type="text" id="photo" class="form-control" required="">
+    
+        <hr>
+    
+        <!-- question 1 -->
+        <div class="form-group">
+            <label for="q1"></label>
+            <select class="form-control" id="q1">
+                <option value="empty"></option>
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+        </div>
+    
+        <!-- question 2 -->
+        <div class="form-group">
+            <label for="q2"></label>
+            <select class="form-control" id="q2">
+                <option value="empty"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    
+        <!-- question 3 -->
+        <div class="form-group">
+            <label for="q3"></label>
+            <select class="form-control" id="q3">
+                <option value="empty"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    
+        <!-- question 4 -->
+        <div class="form-group">
+            <label for="q4"></label>
+            <select class="form-control" id="q4">
+                <option value="empty"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    
+        <!-- question 5 -->
+        <div class="form-group">
+            <label for="q5"></label>
+            <select class="form-control" id="q5">
+                <option value="empty"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    
+        <!-- question 6 -->
+        <div class="form-group">
+            <label for="q6"></label>
+            <select class="form-control" id="q6">
+                <option value="empty"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    
+        <!-- question 7 -->
+        <div class="form-group">
+            <label for="q7"></label>
+            <select class="form-control" id="q7">
+                <option value="empty"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    
+        <!-- question 8 -->
+        <div class="form-group">
+            <label for="q8"></label>
+            <select class="form-control" id="q8">
+                <option value="empty"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    
+        <!-- question 9 -->
+        <div class="form-group">
+            <label for="q9"></label>
+            <select class="form-control" id="q9">
+                <option value="empty"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    
+        <!-- question 10 -->
+        <div class="form-group">
+            <label for="q10"></label>
+            <select class="form-control" id="q10">
+                <option value="empty"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    
+        <br>
+    
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-id-badge" aria-hidden="true"></i>  EXPERIENCE THE RUSH</button>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -51,11 +185,6 @@
   
       console.log(newFriend);
   
-      // This line is the magic. It"s very similar to the standard ajax function we used.
-      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-      // depending on if a tables is available or not.
-      //  
       $.post("/api/friends", newFriend,
         function(data) {
   
