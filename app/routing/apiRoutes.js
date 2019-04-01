@@ -12,7 +12,10 @@ module.exports = function(app) {
       res.json(friends);
     });
 
+    // This is where my main comparison functionality happens, users survey responses which were posted from survey.html are compared against the existing data in friends.js and then their best friend match can be determined and returned to them as a modal popup
     app.post("/api/friends", function(req, res) {
+
+        console.log(req.body.scores);
 
         var newFriend = req.body;
 
