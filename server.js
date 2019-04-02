@@ -12,7 +12,7 @@ var app = express();
 // Set initial port and allow port to be set by Heroku
 var PORT = process.env.PORT || 3000;
 
-// Sets up the Express app to handle data parsing with middleware
+// Sets up the Express app to handle data parsing with built-in middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

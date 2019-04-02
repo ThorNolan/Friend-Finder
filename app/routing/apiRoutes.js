@@ -17,14 +17,18 @@ module.exports = function(app) {
 
         console.log(req.body.scores);
 
+        // Store user response data and scores in local variables
         var userData = req.body;
+        var userResponses = userData.responses;
 
-        function findMatch(userData) {
-            var totalDifference = 0;
-            for (var i=0; i < userData.length; i++) {
-                
-            }
-        }
+        // ParseInt for all user responses so they can be compared as integers
+        for (var i=0; i < userResponses.length; i++) {
+            userResponses[i] = parseInt(userResponses[i])
+        };
+
+        var idealMatch = 0;
+        var total
+        
 
     });    
 };
