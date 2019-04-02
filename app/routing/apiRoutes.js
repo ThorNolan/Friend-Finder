@@ -21,15 +21,39 @@ module.exports = function(app) {
         var userData = req.body;
         var userResponses = userData.responses;
 
+        var matchName = "";
+        var matchPhoto = "";
+
         // ParseInt for all user responses so they can be compared as integers
         for (var i=0; i < userResponses.length; i++) {
             userResponses[i] = parseInt(userResponses[i])
         };
 
-        var idealMatch = 0;
-        var total
-        
+        // Loop through both arrays so they can be compared and total the difference between responses calculated
+        for (var i=0; i < friends.length; i++) {
 
+            // Difference will be increased and compared against the max difference, which will start out higher than 
+            var difference = 0;
+            var maxDifference = 500;
+
+            // Calculated the total difference between user responses and each item in the friends 
+            for (var j=0; j < userResponses.length; j++) {
+                difference += Math.abs(friends[i].responses[j] - userResponses[j]) 
+            }
+
+            // Set max difference to the calculated difference so the next iteration can potentially find a better match
+            if (difference < maxDifference) {
+                maxDifference = difference;
+                matchName = friends[i].name;
+                matchPhoto = friends[i].photo;
+            }
+
+            // Push the user data to the friends array in friends.js
+            friends.push(userData);
+
+            // Respond with the calculated match for the user
+            res.json({matchName: matchName, matchImage: matchImage});
+        }
     });    
 };
 

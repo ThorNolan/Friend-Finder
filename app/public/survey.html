@@ -260,7 +260,7 @@
     
         console.log(newFriend);
 
-        // Post request for the newFriend object that also returns data from about their best match calculates on the apiRoutes.js
+        // Post request for the newFriend object that also returns data from about their best match calculated on the apiRoutes.js
         $.post("/api/friends", newFriend,
             function(data) {
                 // Trigger my modal popup with info about the match found for the user
