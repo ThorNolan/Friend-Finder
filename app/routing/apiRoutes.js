@@ -1,7 +1,10 @@
 //=============================== DEPENDENCIES ==========================================
 
 // Get data that I exported from my friends.js file and store in a variable
-var friendData = require("../data/friends");
+var friendData = require("../data/friends.js");
+
+var path = require("path");
+
 
 
 //=================================== ROUTING ============================================
@@ -9,7 +12,7 @@ var friendData = require("../data/friends");
 module.exports = function(app) {
     // Return all data in friends.js in JSON format
     app.get("/api/friends", function(req, res) {
-      res.json(friends);
+      res.json(friendData);
     });
 
     // This is where my main comparison functionality happens, users survey responses which were posted from survey.html are compared against the existing data in friends.js and then their best friend match can be determined and returned to them as a modal popup
@@ -30,7 +33,7 @@ module.exports = function(app) {
         };
 
         // Loop through both arrays so they can be compared and total the difference between responses calculated
-        for (var i=0; i < friends.length; i++) {
+        for (var i=0; i < friendData.length; i++) {
 
             // Difference will be increased and compared against the max difference, which will start out higher than 
             var difference = 0;
@@ -38,18 +41,18 @@ module.exports = function(app) {
 
             // Calculated the total difference between user responses and each item in the friends 
             for (var j=0; j < userResponses.length; j++) {
-                difference += Math.abs(friends[i].responses[j] - userResponses[j]) 
+                difference += Math.abs(friendData[i].responses[j] - userResponses[j]) 
             }
 
             // Set max difference to the calculated difference so the next iteration can potentially find a better match
             if (difference < maxDifference) {
                 maxDifference = difference;
-                matchName = friends[i].name;
-                matchPhoto = friends[i].photo;
+                matchName = friendData[i].name;
+                matchPhoto = friendData[i].photo;
             }
 
             // Push the user data to the friends array in friends.js
-            friends.push(userData);
+            friendData.push(userData);
 
             // Respond with the calculated match for the user
             res.json({status: "OK", matchName: matchName, matchPhoto: matchPhoto});

@@ -1,0 +1,11 @@
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(to bottom right, dodgerblue, #FF751A);
+    background: no-repeat;
+}
