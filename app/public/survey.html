@@ -228,7 +228,7 @@
 <script type="text/javascript">
     
     // jQuery click listener to gather submission data from user responses to survey questions 
-    $(".submit").on("click", function(event) {
+    $("#submit").on("click", function(event) {
       event.preventDefault();
   
       // Conditional for form validation checks for any empty input areas, which will set my formCompleted variable to false
@@ -261,11 +261,10 @@
         console.log(newFriend);
 
         // Post request for the newFriend object that also returns data from about their best match calculated on the apiRoutes.js
-        $.post("/api/friends", newFriend,
-            function(data) {
+        $.post("/api/friends", newFriend).done(function(data) {
                 // Trigger my modal popup with info about the match found for the user
-                $("#userMatch").text(data.name);
-				$("#userMatchPhoto").attr("src", data.photo);
+                $("#userMatch").html(data.matchName);
+		    	$("#userMatchPhoto").attr("src", data.matchPhoto);
 				$("#matchModal").modal("toggle");
             });
       } else {

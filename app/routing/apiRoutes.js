@@ -52,7 +52,7 @@ module.exports = function(app) {
             friends.push(userData);
 
             // Respond with the calculated match for the user
-            res.json({matchName: matchName, matchImage: matchImage});
+            res.json({status: "OK", matchName: matchName, matchPhoto: matchPhoto});
         }
     });    
 };
