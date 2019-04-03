@@ -14,26 +14,25 @@ module.exports = function(app) {
     // This is where my main comparison functionality happens, users survey responses which were posted from survey.html are compared against the existing data in friends.js and then their best friend match can be determined and returned to them as a modal popup
     app.post("/api/friends", function(req, res) {
 
-        console.log(req.body.responses);
+        //console.log(req.body.responses);
 
         // Store user response data and scores in local variables
         var userData = req.body;
         var userResponses = userData.responses;
 
+        // Variables for grabbing ahold of match name and photo
         var matchName = "";
         var matchPhoto = "";
 
-        // ParseInt for all user responses so they can be compared as integers
-        for (var i=0; i < userResponses.length; i++) {
-            userResponses[i] = parseInt(userResponses[i])
-        };
+        // Maximum difference starts out higher than the largest possible difference and will be set to lower values as arrays are compared below
+        var maxDifference = 500;
 
+    
         // Loop through both arrays so they can be compared and total the difference between responses calculated
         for (var i=0; i < friendData.length; i++) {
 
-            // Difference will be increased and compared against the max difference, which will start out as a very high number but be set to the minimum difference through the course of the following iterations
+            // Difference will be increased and compared against the max difference, which will be set to the minimum difference through the course of the following iterations
             var difference = 0;
-            var maxDifference = 500;
 
             // Calculated the total difference between user responses and each item in the friends array
             for (var j=0; j < userResponses.length; j++) {

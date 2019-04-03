@@ -92,3 +92,89 @@ h4 {
     color: black;
     font-family: 'Roboto Condensed', sans-serif;
 }
+
+/* media queries for added responsiveness */
+@media only screen and (max-width:768px) {
+    .homeContainer {
+        margin-top: 3.5vh;
+        width: 80vw;
+    }
+
+    .header {
+        font-size: 36px;
+    }
+
+    .mainp {
+        font-size: 20px;
+    }
+
+    .homeText {
+        font-size: 18px;
+    }
+
+    #footerHome {
+        margin-top: 6.5vh;
+    }
+
+    .surveyContainer {
+        width: 80vw;
+    }
+
+    .surveyHeader {
+        font-size: 24px;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .surveyContainer label {
+        font-size: 18px;
+    }
+
+    .surveyFooter {
+        margin-top: 2.5vh;
+        margin-bottom: 1.5vh;
+    }
+}
+
+@media only screen and (max-width:640px) {
+    .homeContainer {
+        margin-top: 2.5vh;
+        width: 90.5vw;
+    }
+
+    .header {
+        font-size: 32px;
+    }
+
+    .mainp {
+        font-size: 18px;
+    }
+
+    .homeText {
+        font-size: 16px;
+    }
+
+    #footerHome {
+        margin-top: 5.5vh;
+    }
+
+    .surveyContainer {
+        width: 90.5vw;
+    }
+
+    .surveyHeader {
+        font-size: 22px;
+        padding-left: 7.5%;
+        padding-right: 7.5%;
+    }  
+
+    .surveyContainer label {
+        font-size: 16px;
+    }
+
+    .surveyFooter {
+        margin-top: 2.5vh;
+        margin-bottom: 1.5vh;
+    }
+}
+

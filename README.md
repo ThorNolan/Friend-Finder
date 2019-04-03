@@ -12,13 +12,15 @@ Do we ever really connect with one another? Is it possible to know another human
 + Upon submitting the survey, users will be matched with the person who has answered the survey questions most similarly to them, and shown their name and picture. It relies on express and path for routing and Node.js for its server environment. 
 
 ## 📁 Deployment Instructions
-This app has been deployed to Heroku, so the live link can be found [here](heroku url here "live link"). If you would like to run the app locally, follow these instructions: 
+This app has been deployed to Heroku, and the link can be found [here](https://limitless-dawn-28902.herokuapp.com/ "live link"). If you would like to run the app locally, follow these instructions: 
 
 1. Clone this repository down to your machine.
    
 2. Enter `npm install` into your command line after navigating into the root directory, which will install the dependencies listed in the package.json.
    
 3. Enter `node server.js`, which will initiate the server on http://localhost:3000.
+   
+4. Navigate to http://localhost:3000 in your browser, or ctrl-click the link that will be logged to your console. Enjoy!
 
 ## 🔧 Technologies Used  
 
