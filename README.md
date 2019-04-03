@@ -2,6 +2,8 @@ Existential Friend Finder
 =======================================================================
 Do we ever really connect with one another? Is it possible to know another human being, or are we limited only to our own dilluted representations of what other people must think and feel and experience? Are we all doomed to inescapable loneliness? This full-stack application was designed to provide users with just a moment of relief, which will come when they are matched with whoever has previously responded to the survey most similarly to them, even though it will be snuffed out like a light the moment they dismiss the modal popup displaying their kindred spirit. 
 
+![demo gif](app/public/assets/images/friend-finder-demo.gif "demo gif of friend finder in action")
+
 ## 🔑 How to use the app  
 + Users are asked to provide their name and a link to a photo, and then fill out a short survey consisting of 10 existential statements. 
   

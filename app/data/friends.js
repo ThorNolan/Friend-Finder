@@ -32,6 +32,22 @@ var friendsArray = [
             3,
             5
         ]
+    },
+    {
+        "name": "Squidward",
+        "photo": "https://i.pinimg.com/236x/2b/e0/c3/2be0c36c0aa34b664b80d2529e5dddf6.jpg",
+        "responses":[
+            5,
+            5,
+            5,
+            5,
+            5,
+            4,
+            3,
+            5,
+            2,
+            3
+        ]
     }
 ];
 

@@ -1,15 +1,22 @@
+
+/* body stylings */
+
 * {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.85);
+body, html {
+    height: 100%;
+    background: url(./images/dark-woods.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     color: white;
 }
 
+
+/* homepage stylings */
 h1 {
     font-family: 'Cinzel', serif;
 }
@@ -18,8 +25,9 @@ h1 {
     font-family: 'Cinzel', serif;
 }
 
-hr {
-    color: whitesmoke;
+.header {
+    margin-top: 2.5%;
+    font-size: 42px;
 }
 
 nav {
@@ -27,5 +35,60 @@ nav {
 }
 
 #footerHome {
-    margin-top: 50vh;
+    margin-top: 7vh;
+}
+
+.homeContainer {
+    margin-top: 5vh;
+    width: 65vw;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.surveyBtn {
+    margin-bottom: 2.5%;
+}
+
+.homeText {
+    font-size: 20px;
+    padding: 0.5rem;
+}
+
+.mainp {
+    font-size: 22px;
+    padding: 2.5%;
+}
+
+/* survey page stylings */
+.surveyContainer {
+    margin-top: 5vh;
+    width: 65vw;
+    background-color: rgba(0,0,0,0.8);
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 4%;
+}
+
+.surveyHeader {
+    margin-top: 2.5%;
+    font-size: 30px;
+    padding-left: 17%;
+    padding-right: 17%;
+}
+
+.surveyFooter {
+    margin-top: 2.5vh;
+}
+
+h4 {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.surveyContainer label {
+    font-size: 20px;
+}
+
+.modal-title, #userMatch {
+    color: black;
+    font-family: 'Roboto Condensed', sans-serif;
 }

@@ -45,13 +45,10 @@
   </head>
   <body>
 
-    <!-- container for main survey page content -->
-    <div class="container">
+    <h1 class="text-center topText surveyHeader">Fill out all areas before submitting, then enjoy a moment's relief from the immense weight of simply being alive</h1>  
 
-        <h1 class="text-center">Survey</h1>
-        <hr>
-    
-        <h3 class="text-center topText">Fill out all areas before submitting, then enjoy a moment's relief from the immense weight of simply being alive</h3>
+    <!-- container for main survey page content -->
+    <div class="container surveyContainer border border-info rounded">
 
         <h4>Your Name:</h4>
         <input type="text" id="name" class="form-control" required>
@@ -76,7 +73,7 @@
     
         <!-- question 2 -->
         <div class="form-group">
-            <label for="q2">The vastness of time and space mean that it is unlikely that we will ever know of or communicate with other forms of sentient beings.</label>
+            <label for="q2">The vastness of time and space mean that it is unlikely that we will ever know of or communicate with any other sentient living things.</label>
             <select class="form-control" id="q2">
                 <option value="empty"></option>
                 <option value="1">1 (strongly disagree)</option>
@@ -194,7 +191,7 @@
         <br>
     
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-outline-info btn-lg btn-block" id="submit"><i class="fa fa-child" aria-hidden="true"></i>  FORGET YOUR LONELINESS  <i class="fa fa-child" aria-hidden="true"></i></button>
+        <button type="submit" class="btn btn-outline-info btn-lg btn-block" id="submit"><i class="fa fa-child" aria-hidden="true"></i>  FORGET ABOUT YOUR LONELINESS  <i class="fa fa-child" aria-hidden="true"></i></button>
 
         <br>
 
@@ -202,7 +199,7 @@
 
     <!-- footer with links to the friends list in JSON format and the github repo -->
     <footer>
-        <div class="container center">
+        <div class="container center surveyFooter">
         <p class="text-center"><a href="/api/friends"><button type="button" class="btn btn-outline-info">API Friends List</button></a> <a href="https://github.com/ThorNolan/Friend-Finder"><button type="button" class="btn btn-outline-info">GitHub Repo</button></a></p>
         </div>
     </footer>
@@ -212,14 +209,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title">Wow! You two have so much in common. Drink it in, it won't last...</h2>
+                    <h2 class="modal-title text-center">Wow! You two have so much in common. Drink it in, it won't last...</h2>
                 </div>
                 <div class="modal-body">
-                    <h2 id="userMatch"></h2>
-                    <img id="userMatchPhoto" src="#">
+                    <h2 id="userMatch" class="text-center"></h2>
+                    <img id="userMatchPhoto" class="rounded mx-auto d-block" src="#">
                 </div>
                 <div class="modal-footer">
-                    <button type="btn btn-info" data-dismiss="modal">Goodbye, dear friend.</button>
+                    <button type="btn btn-info" class="btn btn-outline-info" data-dismiss="modal">Goodbye, dear friend.</button>
                 </div>
             </div>
         </div>
