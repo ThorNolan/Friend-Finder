@@ -9,8 +9,9 @@ var path = require("path");
 // set up Express server 
 var app = express();
 
-// Set initial port and allow port to be set by Heroku
+// Set initial port and host and allow port to be set by Heroku
 var PORT = process.env.PORT || 3000;
+var HOST = "0.0.0.0";
 
 // Sets up the Express app to handle data parsing with built-in middleware
 app.use(express.urlencoded({ extended: true }));
@@ -30,7 +31,7 @@ require("./app/routing/htmlRoutes")(app);
 //=================================== INITIATION =========================================
 
 // Initiate my server on the specified port
-app.listen(PORT, function() {
+app.listen(PORT, HOST, function() {
     // Log with link when server has started
     console.log("Server listening on: http://localhost:" + PORT);
 });

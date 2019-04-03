@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Cinzel" rel="stylesheet">
 
     <!-- link to my stylesheet -->
     <link rel="stylesheet" type="text/css" href="assets/styles.css">
@@ -47,21 +47,26 @@
 
   <!-- main page content container -->
   <div class="container content">
-      <h1>Desperate for some new friends? Real friends? Fake friends? Does it even matter?</h1>
-      <hr>
+
+    <h1 class="text-center">Existential Friend Finder</h1>
+
+    <div class="container homeContainer border border-info">    
+      <p class="topText text-center">Desperate for some new friends? Real friends? Fake friends? Does it even matter?</p>
+
       <p>It's a lonely world we live in. We all know that. More and more, people are turning to applications as a means to connect with one another. You can think of this as something like that. Or you can think about it as something completely different. It hardly matters, because when it comes down to it, these people may or may not even be real. But the excitement and satisfaction you feel when you make a connection just might do its small part in staving off existence's crushing solitude.</p>
 
-      <p>All you have to do is provide your name and a photo, and respond to ten statements. For just a minute, forget about the inevitability of your own death, take the survey, and feel that rush of genuine* human connection. Say goodbye to loneliness, <i>even if it's just for a moment.</i></p>
+      <p>All you have to do is provide your name and a photo, and respond to ten statements. Forget about the inevitability of your own death, take the survey, and feel that rush of genuine* human connection. Say goodbye to your loneliness, <i>even if it's just for a moment.</i></p>
 
       <div class="text-center">
-        <a href="/survey"><button class="btn btn-lg btn-primary">Discover your perfect match</button></a>
+        <a href="/survey"><button class="btn btn-lg btn-outline-info">Discover your perfect match</button></a>
       </div>
+    </div>  
   </div>  
 
   <!-- footer with links to the friends list in JSON format and the github repo -->
-  <footer class="footer">
-    <div class="container center">
-      <p><a href="/api/friends"><button type="button" class="btn btn-outline-dark">API Friends List</button></a> <a href="https://github.com/ThorNolan/Friend-Finder"><button type="button" class="btn btn-outline-dark">GitHub Repo</button></a></p>
+  <footer id="footerHome">
+    <div class="container">
+      <p class="text-center"><a href="/api/friends"><button type="button" class="btn btn-outline-info">API Friends List</button></a> <a href="https://github.com/ThorNolan/Friend-Finder"><button type="button" class="btn btn-outline-info">GitHub Repo</button></a></p>
     </div>
   </footer>
 

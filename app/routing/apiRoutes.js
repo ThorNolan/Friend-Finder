@@ -3,10 +3,6 @@
 // Get data that I exported from my friends.js file and store in a variable
 var friendData = require("../data/friends.js");
 
-var path = require("path");
-
-
-
 //=================================== ROUTING ============================================
 
 module.exports = function(app) {
@@ -18,7 +14,7 @@ module.exports = function(app) {
     // This is where my main comparison functionality happens, users survey responses which were posted from survey.html are compared against the existing data in friends.js and then their best friend match can be determined and returned to them as a modal popup
     app.post("/api/friends", function(req, res) {
 
-        console.log(req.body.scores);
+        console.log(req.body.responses);
 
         // Store user response data and scores in local variables
         var userData = req.body;
@@ -35,11 +31,11 @@ module.exports = function(app) {
         // Loop through both arrays so they can be compared and total the difference between responses calculated
         for (var i=0; i < friendData.length; i++) {
 
-            // Difference will be increased and compared against the max difference, which will start out higher than 
+            // Difference will be increased and compared against the max difference, which will start out as a very high number but be set to the minimum difference through the course of the following iterations
             var difference = 0;
             var maxDifference = 500;
 
-            // Calculated the total difference between user responses and each item in the friends 
+            // Calculated the total difference between user responses and each item in the friends array
             for (var j=0; j < userResponses.length; j++) {
                 difference += Math.abs(friendData[i].responses[j] - userResponses[j]) 
             }

@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Cinzel" rel="stylesheet">
 
     <!-- link to my stylesheet -->
     <link rel="stylesheet" type="text/css" href="assets/styles.css">
@@ -48,14 +48,15 @@
     <!-- container for main survey page content -->
     <div class="container">
 
-        <h2>Survey</h2>
+        <h1 class="text-center">Survey</h1>
         <hr>
     
-        <h3>Please fill out all areas before submitting, and enjoy a moment's relief from the immense weight of simply being alive</h3>
+        <h3 class="text-center topText">Fill out all areas before submitting, then enjoy a moment's relief from the immense weight of simply being alive</h3>
+
         <h4>Your Name:</h4>
         <input type="text" id="name" class="form-control" required>
     
-        <h4>Link to a photo (maybe it's you, <i>maybe it's not</i>)</h4>
+        <h4>Link to a photo (maybe it's you, <i>maybe it's not</i> ):</h4>
         <input type="text" id="photo" class="form-control" required>
     
         <hr>
@@ -75,7 +76,7 @@
     
         <!-- question 2 -->
         <div class="form-group">
-            <label for="q2">The inevitability of universal entropy means that all life is ultimately meaningless.</label>
+            <label for="q2">The vastness of time and space mean that it is unlikely that we will ever know of or communicate with other forms of sentient beings.</label>
             <select class="form-control" id="q2">
                 <option value="empty"></option>
                 <option value="1">1 (strongly disagree)</option>
@@ -140,7 +141,7 @@
     
         <!-- question 7 -->
         <div class="form-group">
-            <label for="q7">We have very little control over our identity and self as these things occur in a manner that is primarily deterministic.</label>
+            <label for="q7">We have very little control over our identity and self as these things occur in a manner that is fully deterministic.</label>
             <select class="form-control" id="q7">
                 <option value="empty"></option>
                 <option value="1">1 (strongly disagree)</option>
@@ -153,7 +154,7 @@
     
         <!-- question 8 -->
         <div class="form-group">
-            <label for="q8">It is impossible to know another person—what we know is only a portrayal we create in our own minds, and is inherently flawed.</label>
+            <label for="q8">It is impossible to truly know another person—what we know is only a portrayal we create in our own minds, and is inherently flawed.</label>
             <select class="form-control" id="q8">
                 <option value="empty"></option>
                 <option value="1">1 (strongly disagree)</option>
@@ -166,7 +167,7 @@
     
         <!-- question 9 -->
         <div class="form-group">
-            <label for="q9">We have significant control over our lives and our identity as a self.</label>
+            <label for="q9">We have significant control over our lives and actively shape our identity as a self.</label>
             <select class="form-control" id="q9">
                 <option value="empty"></option>
                 <option value="1">1 (strongly disagree)</option>
@@ -179,7 +180,7 @@
     
         <!-- question 10 -->
         <div class="form-group">
-            <label for="q10">Pineapple on pizza is honestly fine.</label>
+            <label for="q10">Pineapple on pizza is honestly not that bad.</label>
             <select class="form-control" id="q10">
                 <option value="empty"></option>
                 <option value="1">1 (strongly disagree)</option>
@@ -193,16 +194,16 @@
         <br>
     
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-child" aria-hidden="true"></i>   EXPERIENCE THE RUSH <i class="fa fa-child" aria-hidden="true"></i></button>
+        <button type="submit" class="btn btn-outline-info btn-lg btn-block" id="submit"><i class="fa fa-child" aria-hidden="true"></i>  FORGET YOUR LONELINESS  <i class="fa fa-child" aria-hidden="true"></i></button>
 
         <br>
 
     </div>
 
     <!-- footer with links to the friends list in JSON format and the github repo -->
-    <footer class="footer">
+    <footer>
         <div class="container center">
-        <p><a href="/api/friends"><button type="button" class="btn btn-outline-dark">API Friends List</button></a> <a href="https://github.com/ThorNolan/Friend-Finder"><button type="button" class="btn btn-outline-dark">GitHub Repo</button></a></p>
+        <p class="text-center"><a href="/api/friends"><button type="button" class="btn btn-outline-info">API Friends List</button></a> <a href="https://github.com/ThorNolan/Friend-Finder"><button type="button" class="btn btn-outline-info">GitHub Repo</button></a></p>
         </div>
     </footer>
 
@@ -211,14 +212,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title">Wow! You two have so much in common. Drink it in.</h2>
+                    <h2 class="modal-title">Wow! You two have so much in common. Drink it in, it won't last...</h2>
                 </div>
                 <div class="modal-body">
                     <h2 id="userMatch"></h2>
                     <img id="userMatchPhoto" src="#">
                 </div>
                 <div class="modal-footer">
-                    <button type="btn btn-primary" data-dismiss="modal">Goodbye, dear friend.</button>
+                    <button type="btn btn-info" data-dismiss="modal">Goodbye, dear friend.</button>
                 </div>
             </div>
         </div>
@@ -244,7 +245,7 @@
             var newFriend = {
                 name: $("#name").val().trim(),
                 photo: $("#photo").val().trim(),
-                answers : [
+                responses: [
                     $("#q1").val(),
                     $("#q2").val(),
                     $("#q3").val(),
