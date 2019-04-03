@@ -261,8 +261,8 @@
             // Post request for the newFriend object that also returns data from about their best match calculated on the apiRoutes.js
             $.post("/api/friends", newFriend, function(data) {
                     // Trigger my modal popup with info about the match found for the user
-                    $("#userMatch").html(data.matchName);
-                    $("#userMatchPhoto").attr("src", data.matchPhoto);
+                    $("#userMatch").html(data.name);
+                    $("#userMatchPhoto").attr("src", data.photo);
                     $("#matchModal").modal("toggle");
                 });
         } else {

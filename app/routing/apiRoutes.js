@@ -20,13 +20,14 @@ module.exports = function(app) {
         var userData = req.body;
         var userResponses = userData.responses;
 
-        // Variables for grabbing ahold of match name and photo
-        var matchName = "";
-        var matchPhoto = "";
+        // ParseInt for my user responses so they can be compared as integers
+        for (var i=0; i < userResponses.length; i++) {
+            userResponses[i] = parseInt(userResponses[i]);
+        }
 
-        // Maximum difference starts out higher than the largest possible difference and will be set to lower values as arrays are compared below
-        var maxDifference = 500;
-
+        // Ideal match will be set to the index of the friend whose responses have the minimum difference
+        var minDifference = 50;
+        var idealMatchIndex = 0;
     
         // Loop through both arrays so they can be compared and total the difference between responses calculated
         for (var i=0; i < friendData.length; i++) {
@@ -35,23 +36,22 @@ module.exports = function(app) {
             var difference = 0;
 
             // Calculated the total difference between user responses and each item in the friends array
-            for (var j=0; j < userResponses.length; j++) {
+            for (var j=0; j < friendData[i].responses.length; j++) {
                 difference += Math.abs(friendData[i].responses[j] - userResponses[j]) 
             }
 
-            // Set max difference to the calculated difference so the next iteration can potentially find a better match
-            if (difference < maxDifference) {
-                maxDifference = difference;
-                matchName = friendData[i].name;
-                matchPhoto = friendData[i].photo;
+            // If the new calculated difference is lower than the minimum, use the friend at i as the new ideal match
+            if (difference < minDifference) {
+                minDifference = difference;
+                idealMatchIndex = i;
             }
-
-            // Push the user data to the friends array in friends.js
-            friendData.push(userData);
-
-            // Respond with the calculated match for the user
-            res.json({status: "OK", matchName: matchName, matchPhoto: matchPhoto});
         }
+
+        // Push the user data to the friends array in friends.js after iterations are complete
+        friendData.push(userData);
+
+        // Send response with the calculated match for the user
+        res.json(friendData[idealMatchIndex]);
     });    
 };
 
