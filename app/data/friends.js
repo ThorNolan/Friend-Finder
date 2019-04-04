@@ -48,6 +48,22 @@ var friendsArray = [
             2,
             3
         ]
+    },
+    {
+        "name": "Thor",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcMILZpOrCJvchLXD25TXdE_xIWo6vVh71ESwrPcHURHUZsrEf",
+        "responses": [
+        4,
+        4,
+        3,
+        5,
+        2,
+        5,
+        1,
+        2,
+        5,
+        5
+        ]
     }
 ];
 
